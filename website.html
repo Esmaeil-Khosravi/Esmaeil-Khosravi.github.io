@@ -1,0 +1,1084 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esmaeil Khosravi - Researcher in Cloud Computing & Machine Learning</title>
+    <meta name="description" content="Esmaeil Khosravi - M.Sc. Student in Computer Engineering at Amirkabir University of Technology. Research interests in Serverless Computing, Scheduling, and Machine Learning.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c53030;
+            --accent-light: #fc8181;
+            --text: #1a202c;
+            --text-light: #4a5568;
+            --text-muted: #718096;
+            --bg: #ffffff;
+            --bg-alt: #f7fafc;
+            --bg-dark: #edf2f7;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.1);
+            --gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 400;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+        }
+
+        /* Typography */
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); }
+        h3 { font-size: 1.25rem; }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 8rem 0 4rem;
+            background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(49, 130, 206, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .hero h1 {
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+        }
+
+        .hero-description {
+            font-size: 1.15rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            max-width: 540px;
+        }
+
+        .hero-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-light);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px var(--shadow);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--border);
+            color: var(--text);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.2s backwards;
+        }
+
+        .hero-image img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+
+        /* Placeholder for profile image */
+        .profile-placeholder {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            background: var(--gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            color: white;
+            font-family: 'Playfair Display', serif;
+            border: 4px solid white;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-header {
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+        }
+
+        /* About Section */
+        #about {
+            background: var(--bg);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .info-card {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .info-card h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .info-item i {
+            color: var(--accent);
+            margin-top: 4px;
+            width: 20px;
+        }
+
+        .info-item span {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .info-item a {
+            color: var(--text-light);
+        }
+
+        /* Research Interests */
+        #research {
+            background: var(--bg-alt);
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .research-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .research-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px var(--shadow);
+        }
+
+        .research-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+
+        .research-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-family: 'Source Sans 3', sans-serif;
+        }
+
+        .research-card ul {
+            list-style: none;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .research-card li {
+            padding: 0.25rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+        }
+
+        .research-card li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Publications */
+        #publications {
+            background: var(--bg);
+        }
+
+        .publication-item {
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .publication-item:last-child {
+            border-bottom: none;
+        }
+
+        .pub-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .pub-status {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            background: var(--bg-alt);
+            color: var(--text-muted);
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Experience */
+        #experience {
+            background: var(--bg-alt);
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2rem;
+            top: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--primary);
+            border-radius: 50%;
+            transform: translateX(-5px);
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-title {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .timeline-org {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-desc {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Education */
+        #education {
+            background: var(--bg);
+        }
+
+        .edu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .edu-card {
+            background: var(--bg-alt);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .edu-degree {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-school {
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+
+        .edu-school a {
+            color: inherit;
+        }
+
+        .edu-date {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .edu-details {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .edu-gpa {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.75rem;
+        }
+
+        /* Skills */
+        #skills {
+            background: var(--bg-alt);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-category h3 {
+            color: var(--primary);
+            font-family: 'Source Sans 3', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 0.5rem 0;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-list li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Contact */
+        #contact {
+            background: var(--primary);
+            color: white;
+        }
+
+        #contact .section-header h2 {
+            color: white;
+        }
+
+        #contact .section-header h2::after {
+            background: var(--accent-light);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-text {
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: white;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .contact-link i {
+            font-size: 1.25rem;
+            width: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text);
+            color: var(--text-muted);
+            padding: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: var(--accent-light);
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-image {
+                order: -1;
+                margin: 0 auto;
+            }
+
+            .hero-description {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-links {
+                justify-content: center;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .edu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 2rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-toggle {
+                display: block;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="nav-brand">E. Khosravi</a>
+            <button class="nav-toggle" onclick="toggleNav()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="hero-subtitle">M.Sc. Researcher</p>
+                    <h1>Esmaeil Khosravi</h1>
+                    <p class="hero-description">
+                        First-rank M.Sc. student in Computer Engineering at Amirkabir University of Technology, 
+                        researching <strong>Energy-Aware Scheduling</strong> in <strong>Serverless Computing</strong> 
+                        with interests in Machine Learning and Distributed Systems.
+                    </p>
+                    <div class="hero-links">
+                        <a href="#contact" class="btn-primary">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                        <a href="assets/Esmaeil-Khosravi-CV.pdf" class="btn-outline">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <!-- Replace with your actual photo: -->
+                    <!-- <img src="assets/profile.jpg" alt="Esmaeil Khosravi"> -->
+                    <div class="profile-placeholder">EK</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>
+                        I am a first-rank M.Sc. student in Computer Engineering (Software Engineering) at 
+                        <strong>Amirkabir University of Technology (Tehran Polytechnic)</strong>, Iran. 
+                        My research focuses on developing energy-aware scheduling strategies for serverless 
+                        computing platforms to enhance Quality of Service while optimizing resource consumption.
+                    </p>
+                    <p>
+                        My master's thesis, supervised by Dr. Kalbasi, addresses the cold start problem in 
+                        Function-as-a-Service (FaaS) platforms through mathematical modeling, optimization 
+                        techniques, and online/offline scheduling algorithms.
+                    </p>
+                    <p>
+                        Beyond my thesis work, I have conducted research analyzing the SPECpower-ssj2008 
+                        benchmark dataset spanning 958 servers from 2007-2024, applying statistical learning, 
+                        clustering, and regression models to characterize server power-performance behavior.
+                    </p>
+                    <p>
+                        I am actively seeking PhD opportunities in <strong>Cloud Computing</strong>, 
+                        <strong>Distributed Systems</strong>, and <strong>Machine Learning</strong> for systems optimization.
+                    </p>
+                </div>
+                <div class="info-card">
+                    <h3>Quick Info</h3>
+                    <div class="info-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>M.Sc. in Computer Engineering</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-university"></i>
+                        <span>Amirkabir University of Technology</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-trophy"></i>
+                        <span>First Rank (GPA: 4.0/4.0)</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Tehran, Iran</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:es.khosravi@aut.ac.ir">es.khosravi@aut.ac.ir</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Research Interests -->
+    <section id="research">
+        <div class="container">
+            <div class="section-header">
+                <h2>Research Interests</h2>
+            </div>
+            <div class="research-grid">
+                <div class="research-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>Cloud Computing & Distributed Systems</h3>
+                    <ul>
+                        <li>Function as a Service (FaaS)</li>
+                        <li>Serverless Computing</li>
+                        <li>Scheduling & Resource Management</li>
+                        <li>Optimization</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-brain"></i>
+                    <h3>AI & Machine Learning</h3>
+                    <ul>
+                        <li>Deep Neural Networks</li>
+                        <li>Reinforcement Learning</li>
+                        <li>Large Language Models</li>
+                        <li>Statistical Learning</li>
+                    </ul>
+                </div>
+                <div class="research-card">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Data Science & Networks</h3>
+                    <ul>
+                        <li>Graph Neural Networks</li>
+                        <li>Recommendation Systems</li>
+                        <li>Big Data Analysis</li>
+                        <li>Complex Networks</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications">
+        <div class="container">
+            <div class="section-header">
+                <h2>Publications</h2>
+            </div>
+            <div class="publication-item">
+                <p class="pub-title">
+                    Performance to Power Behavior of Server Machines: An Analysis on SPECpower-ssj 2008 Benchmark
+                </p>
+                <span class="pub-status">Under Preparation</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <h2>Teaching Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <p class="timeline-date">Sep 2025 – Present</p>
+                    <p class="timeline-title">Operating Systems Laboratory Instructor</p>
+                    <p class="timeline-org">Amirkabir University of Technology</p>
+                    <p class="timeline-desc">Teaching OS concepts in Linux environment (Fall 2025)</p>
+                </div>
+                <div class="timeline-item">
+                    <p class="timeline-date">Oct 2024 – Sep 2025</p>
+                    <p class="timeline-title">Programming Laboratory Instructor</p>
+                    <p class="timeline-org">Amirkabir University of Technology</p>
+                    <p class="timeline-desc">Teaching programming concepts in C (Fall 2024 & Spring 2025)</p>
+                </div>
+                <div class="timeline-item">
+                    <p class="timeline-date">Feb 2025 – Present</p>
+                    <p class="timeline-title">Teaching Assistant</p>
+                    <p class="timeline-org">Amirkabir University of Technology</p>
+                    <p class="timeline-desc">
+                        Machine Learning (Graduate) – Dr. Nazerfard<br>
+                        Advanced Programming (Undergraduate) – Dr. Kalbasi<br>
+                        Complex Network Analysis (Graduate) – Dr. Chehreghani<br>
+                        Distributed Systems (Graduate) – Dr. Kalbasi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <div class="container">
+            <div class="section-header">
+                <h2>Education</h2>
+            </div>
+            <div class="edu-grid">
+                <div class="edu-card">
+                    <p class="edu-degree">M.Sc. in Computer Engineering (Software Engineering)</p>
+                    <p class="edu-school">
+                        <a href="https://aut.ac.ir" target="_blank">Amirkabir University of Technology (Tehran Polytechnic)</a>
+                    </p>
+                    <p class="edu-date">Sep 2023 – Present | Tehran, Iran</p>
+                    <p class="edu-details">
+                        <strong>Thesis:</strong> Energy-Aware Cold Start Mitigation to Enhance QoS in Serverless Computing<br>
+                        <strong>Supervisor:</strong> Dr. Kalbasi
+                    </p>
+                    <span class="edu-gpa">GPA: 4.0/4.0 – First Rank</span>
+                </div>
+                <div class="edu-card">
+                    <p class="edu-degree">B.Sc. in Industrial Engineering</p>
+                    <p class="edu-school">
+                        <a href="https://basu.ac.ir" target="_blank">University of Bu-Ali Sina</a>
+                    </p>
+                    <p class="edu-date">Sep 2016 – Oct 2020 | Hamedan, Iran</p>
+                    <p class="edu-details">
+                        <strong>Project:</strong> Location Optimization of Air Ambulance Bases Under Demand Location Uncertainty<br>
+                        <strong>Supervisor:</strong> Dr. Samouei
+                    </p>
+                    <span class="edu-gpa">GPA: 3.05/4.0</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <h2>Skills</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3><i class="fas fa-code"></i> Programming</h3>
+                    <ul class="skill-list">
+                        <li>Python (Advanced)</li>
+                        <li>C (Advanced)</li>
+                        <li>Java (Intermediate)</li>
+                        <li>SQL (Intermediate)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-robot"></i> ML/Data Science</h3>
+                    <ul class="skill-list">
+                        <li>TensorFlow</li>
+                        <li>Scikit-learn</li>
+                        <li>Pandas & NumPy</li>
+                        <li>Statistical Learning</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                    <ul class="skill-list">
+                        <li>Git</li>
+                        <li>Docker</li>
+                        <li>Linux</li>
+                        <li>LaTeX</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3><i class="fas fa-language"></i> Languages</h3>
+                    <ul class="skill-list">
+                        <li>English (C1)</li>
+                        <li>Persian (Native)</li>
+                        <li>Azerbaijani (Native)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-text">
+                    <p>
+                        I am actively looking for PhD positions in Cloud Computing, Distributed Systems, 
+                        and Machine Learning. If you are interested in my research or would like to collaborate, 
+                        please feel free to reach out!
+                    </p>
+                </div>
+                <div class="contact-links">
+                    <a href="mailto:es.khosravi@aut.ac.ir" class="contact-link">
+                        <i class="fas fa-envelope"></i>
+                        <span>es.khosravi@aut.ac.ir</span>
+                    </a>
+                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-link">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </a>
+                    <a href="https://github.com/your-username" target="_blank" class="contact-link">
+                        <i class="fab fa-github"></i>
+                        <span>GitHub Profile</span>
+                    </a>
+                    <a href="https://scholar.google.com/" target="_blank" class="contact-link">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Google Scholar</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Esmaeil Khosravi. Built with ❤️ for academia.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+
+        // Close mobile nav when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
