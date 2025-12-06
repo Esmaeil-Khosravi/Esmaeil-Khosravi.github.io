@@ -3,408 +3,585 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Esmaeil Khosravi - Researcher in Cloud Computing & Machine Learning</title>
-    <meta name="description" content="Esmaeil Khosravi - M.Sc. Student in Computer Engineering at Amirkabir University of Technology. Research interests in Serverless Computing, Scheduling, and Machine Learning.">
+    <title>Esmaeil Khosravi | Cloud Computing & ML Researcher</title>
+    <meta name="description" content="Esmaeil Khosravi - M.Sc. Researcher in Computer Engineering at Amirkabir University of Technology. Specializing in Serverless Computing, Energy-Aware Scheduling, and Machine Learning.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
     <style>
         :root {
-            --primary: #1a365d;
-            --primary-light: #2c5282;
-            --accent: #c53030;
-            --accent-light: #fc8181;
-            --text: #1a202c;
-            --text-light: #4a5568;
-            --text-muted: #718096;
-            --bg: #ffffff;
-            --bg-alt: #f7fafc;
-            --bg-dark: #edf2f7;
-            --border: #e2e8f0;
-            --shadow: rgba(0, 0, 0, 0.1);
-            --gradient: linear-gradient(135deg, #1a365d 0%, #2c5282 50%, #3182ce 100%);
+            --gradient-start: #0f172a;
+            --gradient-mid: #1e3a5f;
+            --gradient-end: #0c4a6e;
+            --primary-600: #0284c7;
+            --primary-500: #0ea5e9;
+            --primary-400: #38bdf8;
+            --primary-300: #7dd3fc;
+            --accent-500: #f59e0b;
+            --accent-400: #fbbf24;
+            --accent-300: #fcd34d;
+            --slate-900: #0f172a;
+            --slate-800: #1e293b;
+            --slate-700: #334155;
+            --slate-600: #475569;
+            --slate-500: #64748b;
+            --slate-400: #94a3b8;
+            --slate-300: #cbd5e1;
+            --slate-200: #e2e8f0;
+            --slate-100: #f1f5f9;
+            --slate-50: #f8fafc;
+            --white: #ffffff;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        
         body {
-            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
-            font-weight: 400;
+            font-family: 'Inter', -apple-system, sans-serif;
             line-height: 1.7;
-            color: var(--text);
-            background: var(--bg);
+            color: var(--slate-900);
+            background: var(--white);
+            overflow-x: hidden;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
-            font-family: 'Playfair Display', Georgia, serif;
+            font-family: 'Crimson Pro', Georgia, serif;
             font-weight: 600;
-            line-height: 1.3;
+            line-height: 1.2;
         }
 
-        h1 { font-size: clamp(2.5rem, 5vw, 3.5rem); }
-        h2 { font-size: clamp(1.75rem, 3vw, 2.25rem); }
-        h3 { font-size: 1.25rem; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 700; }
+        h2 { font-size: clamp(1.75rem, 3vw, 2.5rem); }
+        h3 { font-size: 1.35rem; }
 
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+        a { color: var(--primary-600); text-decoration: none; transition: all 0.3s ease; }
+        a:hover { color: var(--primary-500); }
 
-        a:hover {
-            color: var(--accent);
-        }
-
-        /* Layout */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
+        .container { max-width: 1140px; margin: 0 auto; padding: 0 1.5rem; }
 
         /* Navigation */
         nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 1rem 0;
+            transition: all 0.4s ease;
         }
 
-        nav .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        nav.scrolled {
+            background: rgba(255, 255, 255, 0.97);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
+
+        nav .container { display: flex; justify-content: space-between; align-items: center; }
 
         .nav-brand {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary);
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--white);
         }
 
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
+        nav.scrolled .nav-brand { color: var(--slate-900); }
+
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
 
         .nav-links a {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 500;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.9);
             position: relative;
+            padding: 0.5rem 0;
         }
+
+        nav.scrolled .nav-links a { color: var(--slate-700); }
 
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent);
+            bottom: 0; left: 0;
+            width: 0; height: 2px;
+            background: linear-gradient(90deg, var(--primary-400), var(--accent-400));
             transition: width 0.3s ease;
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-links a:hover { color: var(--white); }
+        nav.scrolled .nav-links a:hover { color: var(--primary-600); }
 
         .nav-toggle {
             display: none;
-            background: none;
-            border: none;
+            background: none; border: none;
             font-size: 1.5rem;
             cursor: pointer;
-            color: var(--primary);
+            color: var(--white);
         }
+
+        nav.scrolled .nav-toggle { color: var(--slate-900); }
 
         /* Hero Section */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 8rem 0 4rem;
-            background: linear-gradient(180deg, var(--bg-alt) 0%, var(--bg) 100%);
             position: relative;
             overflow: hidden;
+            background: linear-gradient(135deg, var(--gradient-start) 0%, var(--gradient-mid) 50%, var(--gradient-end) 100%);
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(49, 130, 206, 0.08) 0%, transparent 70%);
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
+        .hero-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(56, 189, 248, 0.04));
+            animation: float 20s infinite ease-in-out;
+        }
+
+        .shape-1 { width: 500px; height: 500px; top: -150px; right: -150px; }
+        .shape-2 { width: 350px; height: 350px; bottom: -100px; left: -100px; animation-delay: -7s; }
+        .shape-3 { width: 200px; height: 200px; top: 40%; left: 25%; animation-delay: -14s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-30px) rotate(5deg); }
+        }
+
         .hero-content {
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: 1fr 300px;
+            grid-template-columns: 1fr 350px;
             gap: 4rem;
             align-items: center;
+            padding: 6rem 0;
         }
 
-        .hero-text {
-            animation: fadeInUp 0.8s ease;
-        }
+        .hero-text { animation: fadeInUp 1s ease; }
 
         @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--accent);
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50px;
+            font-size: 0.85rem;
             font-weight: 500;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.05em;
+            color: var(--primary-300);
+            margin-bottom: 1.5rem;
         }
 
-        .hero h1 {
-            margin-bottom: 1.5rem;
-            color: var(--primary);
+        .hero-badge i { color: var(--accent-400); }
+
+        .hero h1 { color: var(--white); margin-bottom: 1.5rem; }
+
+        .hero-highlight {
+            background: linear-gradient(135deg, var(--primary-300), var(--accent-300));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero-description {
             font-size: 1.15rem;
-            color: var(--text-light);
+            color: var(--slate-300);
             margin-bottom: 2rem;
-            max-width: 540px;
+            max-width: 500px;
+            line-height: 1.8;
         }
 
-        .hero-links {
+        .hero-description strong { color: var(--primary-300); font-weight: 600; }
+
+        .hero-stats {
             display: flex;
-            gap: 1.5rem;
-            flex-wrap: wrap;
+            gap: 2.5rem;
+            margin-bottom: 2rem;
+            padding: 1.25rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .hero-links a {
+        .stat-value {
+            font-family: 'Crimson Pro', serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--white);
+        }
+
+        .stat-label { font-size: 0.8rem; color: var(--slate-400); }
+
+        .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+        .btn {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            font-weight: 500;
+            gap: 0.6rem;
+            padding: 0.9rem 1.75rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
             transition: all 0.3s ease;
+            border: none;
         }
 
         .btn-primary {
-            background: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: var(--white);
+            box-shadow: 0 4px 20px rgba(14, 165, 233, 0.4);
         }
 
         .btn-primary:hover {
-            background: var(--primary-light);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px var(--shadow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(14, 165, 233, 0.5);
+            color: var(--white);
         }
 
-        .btn-outline {
-            border: 2px solid var(--border);
-            color: var(--text);
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: var(--white);
         }
 
-        .btn-outline:hover {
-            border-color: var(--primary);
-            color: var(--primary);
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-3px);
+            color: var(--white);
+        }
+
+        /* Hero Image */
+        .hero-image-wrapper {
+            position: relative;
+            animation: fadeInUp 1s ease 0.3s backwards;
+        }
+
+        .hero-image-container {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+
+        .hero-image-bg {
+            position: absolute;
+            inset: -25px;
+            background: linear-gradient(135deg, var(--primary-500), var(--accent-400));
+            border-radius: 50%;
+            opacity: 0.15;
+            filter: blur(40px);
+            animation: pulse 4s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.08); opacity: 0.25; }
         }
 
         .hero-image {
             position: relative;
-            animation: fadeInUp 0.8s ease 0.2s backwards;
-        }
-
-        .hero-image img {
-            width: 280px;
-            height: 280px;
+            width: 100%;
+            height: 100%;
             border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid white;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            border: 4px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
         }
 
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            opacity: 0.3;
-        }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* Placeholder for profile image */
         .profile-placeholder {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            background: var(--gradient);
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary-600), var(--slate-800));
             display: flex;
             align-items: center;
             justify-content: center;
+            font-family: 'Crimson Pro', serif;
             font-size: 5rem;
-            color: white;
-            font-family: 'Playfair Display', serif;
-            border: 4px solid white;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            font-weight: 700;
+            color: var(--white);
         }
 
-        /* Section Styles */
-        section {
-            padding: 5rem 0;
-        }
-
-        .section-header {
-            margin-bottom: 3rem;
-        }
-
-        .section-header h2 {
-            color: var(--primary);
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
+        .hero-image-ring {
             position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: var(--accent);
+            inset: -18px;
+            border: 2px dashed rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            animation: spin 40s linear infinite;
         }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .hero-social {
+            display: flex;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            justify-content: center;
+        }
+
+        .hero-social a {
+            width: 46px;
+            height: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .hero-social a:hover {
+            background: var(--white);
+            color: var(--primary-600);
+            transform: translateY(-4px) scale(1.05);
+        }
+
+        /* Sections */
+        section { padding: 5rem 0; }
+
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary-600);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h2 { color: var(--slate-900); margin-bottom: 1rem; }
+        .section-header p { max-width: 550px; margin: 0 auto; color: var(--slate-600); }
 
         /* About Section */
-        #about {
-            background: var(--bg);
-        }
+        #about { background: var(--slate-50); }
 
-        .about-content {
+        .about-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr;
+            grid-template-columns: 1.2fr 1fr;
             gap: 4rem;
+            align-items: start;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
-            color: var(--text-light);
+        .about-content p {
+            margin-bottom: 1.25rem;
+            font-size: 1.02rem;
+            color: var(--slate-600);
+            line-height: 1.85;
         }
 
-        .info-card {
-            background: var(--bg-alt);
-            padding: 2rem;
+        .about-highlights {
+            display: grid;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 1.25rem;
+            background: var(--white);
             border-radius: 12px;
-            border: 1px solid var(--border);
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
         }
 
-        .info-card h3 {
-            color: var(--primary);
-            margin-bottom: 1.5rem;
-            font-family: 'Source Sans 3', sans-serif;
+        .highlight-item:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateX(5px);
+        }
+
+        .highlight-icon {
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            border-radius: 10px;
+            color: var(--white);
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+
+        .highlight-text h4 {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
             font-weight: 600;
+            color: var(--slate-900);
+            margin-bottom: 0.15rem;
+        }
+
+        .highlight-text p {
+            font-size: 0.85rem;
+            color: var(--slate-500);
+            margin: 0;
+        }
+
+        /* Info Card */
+        .info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            border: 1px solid var(--slate-100);
+        }
+
+        .info-card-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--slate-100);
+        }
+
+        .info-card-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-400), var(--accent-500));
+            border-radius: 12px;
+            color: var(--white);
+            font-size: 1.25rem;
+        }
+
+        .info-card-header h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--slate-900);
         }
 
         .info-item {
             display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-            margin-bottom: 1rem;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--slate-100);
         }
+
+        .info-item:last-child { border-bottom: none; }
 
         .info-item i {
-            color: var(--accent);
-            margin-top: 4px;
             width: 20px;
+            color: var(--primary-500);
+            font-size: 0.9rem;
         }
 
-        .info-item span {
-            color: var(--text-light);
-            font-size: 0.95rem;
+        .info-item span, .info-item a {
+            font-size: 0.92rem;
+            color: var(--slate-600);
         }
 
-        .info-item a {
-            color: var(--text-light);
-        }
+        .info-item a:hover { color: var(--primary-500); }
 
-        /* Research Interests */
-        #research {
-            background: var(--bg-alt);
-        }
+        /* Research Section */
+        #research { background: var(--white); }
 
         .research-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1.5rem;
         }
 
         .research-card {
-            background: white;
+            background: var(--slate-50);
             padding: 2rem;
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            border-radius: 16px;
+            border: 1px solid var(--slate-200);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
         }
+
+        .research-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-500), var(--accent-400));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .research-card:hover::before { transform: scaleX(1); }
 
         .research-card:hover {
+            background: var(--white);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
             transform: translateY(-5px);
-            box-shadow: 0 10px 40px var(--shadow);
         }
 
-        .research-card i {
-            font-size: 2rem;
-            color: var(--primary);
-            margin-bottom: 1rem;
+        .research-icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            border-radius: 14px;
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
         }
 
         .research-card h3 {
-            color: var(--primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--slate-900);
             margin-bottom: 1rem;
-            font-family: 'Source Sans 3', sans-serif;
         }
 
         .research-card ul {
             list-style: none;
-            color: var(--text-light);
-            font-size: 0.95rem;
+            color: var(--slate-600);
+            font-size: 0.9rem;
         }
 
         .research-card li {
-            padding: 0.25rem 0;
+            padding: 0.35rem 0;
             padding-left: 1.25rem;
             position: relative;
         }
@@ -413,104 +590,122 @@
             content: '→';
             position: absolute;
             left: 0;
-            color: var(--accent);
+            color: var(--primary-500);
+            font-weight: 600;
         }
 
         /* Publications */
-        #publications {
-            background: var(--bg);
-        }
+        #publications { background: var(--slate-50); }
 
         .publication-item {
-            padding: 1.5rem 0;
-            border-bottom: 1px solid var(--border);
+            background: var(--white);
+            padding: 1.75rem;
+            border-radius: 12px;
+            border: 1px solid var(--slate-200);
+            display: flex;
+            align-items: flex-start;
+            gap: 1.25rem;
+            transition: all 0.3s ease;
         }
 
-        .publication-item:last-child {
-            border-bottom: none;
+        .publication-item:hover {
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
+
+        .pub-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary-100, #e0f2fe), var(--primary-200, #bae6fd));
+            border-radius: 10px;
+            color: var(--primary-600);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .pub-content { flex: 1; }
 
         .pub-title {
             font-weight: 600;
-            color: var(--text);
+            color: var(--slate-900);
             margin-bottom: 0.5rem;
+            font-size: 1.05rem;
         }
 
         .pub-status {
             display: inline-block;
-            padding: 0.25rem 0.75rem;
-            background: var(--bg-alt);
-            color: var(--text-muted);
-            border-radius: 4px;
-            font-size: 0.85rem;
-            font-weight: 500;
+            padding: 0.3rem 0.75rem;
+            background: linear-gradient(135deg, var(--accent-400), var(--accent-500));
+            color: var(--white);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
         }
 
         /* Experience */
-        #experience {
-            background: var(--bg-alt);
-        }
+        #experience { background: var(--white); }
 
-        .timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
+        .timeline { position: relative; padding-left: 2.5rem; }
 
         .timeline::before {
             content: '';
             position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
+            left: 8px; top: 0; bottom: 0;
             width: 2px;
-            background: var(--border);
+            background: linear-gradient(180deg, var(--primary-500), var(--accent-400));
         }
 
         .timeline-item {
             position: relative;
-            padding-bottom: 2rem;
+            padding-bottom: 2.5rem;
         }
+
+        .timeline-item:last-child { padding-bottom: 0; }
 
         .timeline-item::before {
             content: '';
             position: absolute;
-            left: -2rem;
-            top: 8px;
-            width: 12px;
-            height: 12px;
-            background: var(--primary);
+            left: -2.5rem;
+            top: 6px;
+            width: 18px;
+            height: 18px;
+            background: var(--white);
+            border: 3px solid var(--primary-500);
             border-radius: 50%;
-            transform: translateX(-5px);
+            z-index: 1;
         }
 
         .timeline-date {
-            font-size: 0.9rem;
-            color: var(--accent);
-            font-weight: 500;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary-600);
             margin-bottom: 0.25rem;
         }
 
         .timeline-title {
-            font-weight: 600;
-            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            color: var(--slate-900);
+            font-size: 1.1rem;
             margin-bottom: 0.25rem;
         }
 
         .timeline-org {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+            color: var(--slate-500);
+            font-size: 0.9rem;
             margin-bottom: 0.5rem;
         }
 
         .timeline-desc {
-            color: var(--text-light);
-            font-size: 0.95rem;
+            color: var(--slate-600);
+            font-size: 0.92rem;
+            line-height: 1.7;
         }
 
         /* Education */
-        #education {
-            background: var(--bg);
-        }
+        #education { background: var(--slate-50); }
 
         .edu-grid {
             display: grid;
@@ -519,54 +714,66 @@
         }
 
         .edu-card {
-            background: var(--bg-alt);
+            background: var(--white);
             padding: 2rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--primary);
+            border-radius: 16px;
+            border: 1px solid var(--slate-200);
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .edu-card::before {
+            content: '';
+            position: absolute;
+            left: 0; top: 0; bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, var(--primary-500), var(--accent-400));
+        }
+
+        .edu-card:hover {
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transform: translateY(-3px);
         }
 
         .edu-degree {
-            font-weight: 600;
-            color: var(--text);
+            font-weight: 700;
+            color: var(--slate-900);
             margin-bottom: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .edu-school {
-            color: var(--primary);
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-        }
-
-        .edu-school a {
-            color: inherit;
+            color: var(--primary-600);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
         }
 
         .edu-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
+            color: var(--slate-500);
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
         }
 
         .edu-details {
-            color: var(--text-light);
-            font-size: 0.95rem;
+            color: var(--slate-600);
+            font-size: 0.92rem;
+            line-height: 1.7;
         }
 
         .edu-gpa {
             display: inline-block;
-            background: var(--primary);
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
+            background: linear-gradient(135deg, var(--primary-500), var(--primary-600));
+            color: var(--white);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
             font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 0.75rem;
+            font-weight: 700;
+            margin-top: 1rem;
         }
 
         /* Skills */
-        #skills {
-            background: var(--bg-alt);
-        }
+        #skills { background: var(--white); }
 
         .skills-grid {
             display: grid;
@@ -574,177 +781,170 @@
             gap: 2rem;
         }
 
-        .skill-category h3 {
-            color: var(--primary);
-            font-family: 'Source Sans 3', sans-serif;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
+        .skill-category {
+            background: var(--slate-50);
+            padding: 1.75rem;
+            border-radius: 14px;
+            border: 1px solid var(--slate-200);
+            transition: all 0.3s ease;
         }
 
-        .skill-list {
-            list-style: none;
+        .skill-category:hover {
+            background: var(--white);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
         }
+
+        .skill-category h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--slate-900);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .skill-category h3 i { color: var(--primary-500); }
+
+        .skill-list { list-style: none; }
 
         .skill-list li {
-            padding: 0.5rem 0;
-            color: var(--text-light);
-            font-size: 0.95rem;
+            padding: 0.4rem 0;
+            color: var(--slate-600);
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
         }
 
         .skill-list li::before {
-            content: '•';
-            color: var(--accent);
-            font-weight: bold;
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(135deg, var(--primary-500), var(--accent-400));
+            border-radius: 50%;
         }
 
         /* Contact */
         #contact {
-            background: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            position: relative;
+            overflow: hidden;
         }
 
-        #contact .section-header h2 {
-            color: white;
+        #contact::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 70%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
         }
 
-        #contact .section-header h2::after {
-            background: var(--accent-light);
-        }
+        #contact .section-label { color: var(--primary-300); }
+        #contact .section-header h2 { color: var(--white); }
+        #contact .section-header p { color: var(--slate-400); }
 
-        .contact-content {
+        .contact-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            gap: 3rem;
+            position: relative;
+            z-index: 2;
         }
 
-        .contact-text {
-            color: rgba(255, 255, 255, 0.9);
+        .contact-info p {
+            color: var(--slate-300);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
         }
 
-        .contact-links {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
+        .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
 
         .contact-link {
             display: flex;
             align-items: center;
             gap: 1rem;
-            color: white;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+            padding: 1rem 1.25rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--white);
             transition: all 0.3s ease;
         }
 
         .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
-            color: white;
-            transform: translateX(5px);
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(8px);
+            color: var(--white);
         }
 
         .contact-link i {
-            font-size: 1.25rem;
             width: 24px;
+            font-size: 1.2rem;
+            color: var(--primary-300);
         }
 
         /* Footer */
         footer {
-            background: var(--text);
-            color: var(--text-muted);
+            background: var(--slate-900);
+            color: var(--slate-500);
             padding: 2rem 0;
             text-align: center;
             font-size: 0.9rem;
         }
 
-        footer a {
-            color: var(--accent-light);
-        }
+        footer a { color: var(--primary-400); }
 
-        /* Mobile Responsive */
-        @media (max-width: 968px) {
-            .hero-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-image {
-                order: -1;
-                margin: 0 auto;
-            }
-
-            .hero-description {
-                margin: 0 auto 2rem;
-            }
-
-            .hero-links {
-                justify-content: center;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .research-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .edu-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .skills-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .contact-content {
-                grid-template-columns: 1fr;
-            }
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .hero-image-wrapper { order: -1; margin-bottom: 2rem; }
+            .hero-description { margin: 0 auto 2rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-stats { justify-content: center; }
+            .about-grid { grid-template-columns: 1fr; }
+            .research-grid { grid-template-columns: 1fr 1fr; }
+            .contact-grid { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
                 position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: white;
+                top: 100%; left: 0; right: 0;
+                background: var(--white);
                 flex-direction: column;
-                padding: 1rem 2rem;
+                padding: 1.5rem;
                 gap: 1rem;
-                border-bottom: 1px solid var(--border);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             }
 
-            .nav-links.active {
-                display: flex;
-            }
+            .nav-links.active { display: flex; }
+            .nav-links a { color: var(--slate-700) !important; }
+            .nav-toggle { display: block; }
 
-            .nav-toggle {
-                display: block;
-            }
+            .research-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
+            .skills-grid { grid-template-columns: 1fr 1fr; }
 
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
+            section { padding: 3.5rem 0; }
+            .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+        }
 
-            section {
-                padding: 3rem 0;
-            }
+        @media (max-width: 480px) {
+            .skills-grid { grid-template-columns: 1fr; }
+            .hero-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
         }
     </style>
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav id="navbar">
         <div class="container">
-            <a href="#" class="nav-brand">E. Khosravi</a>
-            <button class="nav-toggle" onclick="toggleNav()">
+            <a href="#" class="nav-brand">Esmaeil Khosravi</a>
+            <button class="nav-toggle" onclick="toggleNav()" aria-label="Toggle navigation">
                 <i class="fas fa-bars"></i>
             </button>
             <ul class="nav-links" id="navLinks">
@@ -760,29 +960,70 @@
 
     <!-- Hero Section -->
     <section class="hero" id="home">
+        <div class="hero-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <p class="hero-subtitle">M.Sc. Researcher</p>
-                    <h1>Esmaeil Khosravi</h1>
+                    <div class="hero-badge">
+                        <i class="fas fa-award"></i>
+                        <span> M.Sc. Student of Computer Software Engineering</span>
+                    </div>
+                    <h1>Hi, I'm <span class="hero-highlight">Esmaeil Khosravi</span></h1>
                     <p class="hero-description">
-                        First-rank M.Sc. student in Computer Engineering at Amirkabir University of Technology, 
-                        researching <strong>Energy-Aware Scheduling</strong> in <strong>Serverless Computing</strong> 
-                        with interests in Machine Learning and Distributed Systems.
+                        Interested in <strong>Cloud Computing</strong>, <strong>Machine Learning</strong> and 
+                        <strong>Reinforcement Learning</strong>. About to graduate with a Master's degree 
+                        in Computer Engineering from Amirkabir University of Technology.
                     </p>
-                    <div class="hero-links">
-                        <a href="#contact" class="btn-primary">
-                            <i class="fas fa-envelope"></i> Contact Me
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-value">4.0</div>
+                            <div class="stat-label">GPA (First Rank)</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">4+</div>
+                            <div class="stat-label">TA Positions</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-value">2</div>
+                            <div class="stat-label">Research Projects</div>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <a href="#contact" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i> Get In Touch
                         </a>
-                        <a href="assets/Esmaeil-Khosravi-CV.pdf" class="btn-outline">
+                        <a href="assets/Esmaeil-Khosravi-CV.pdf" class="btn btn-secondary" target="_blank">
                             <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
                 </div>
-                <div class="hero-image">
-                    <!-- Replace with your actual photo: -->
-                    <!-- <img src="assets/profile.jpg" alt="Esmaeil Khosravi"> -->
-                    <div class="profile-placeholder">EK</div>
+                <div class="hero-image-wrapper">
+                    <div class="hero-image-container">
+                        <div class="hero-image-bg"></div>
+                        <div class="hero-image-ring"></div>
+                        <div class="hero-image">
+                            <!-- Replace with your photo: <img src="assets/profile.jpg" alt="Esmaeil Khosravi"> -->
+                            <div class="profile-placeholder">EK</div>
+                        </div>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://www.linkedin.com/in/esmaeil-khosravi-075b33156/" target="_blank" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/Esmaeil-Khosravi" target="_blank" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="mailto:es.khosravi@aut.ac.ir" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://scholar.google.com/" target="_blank" title="Google Scholar">
+                            <i class="fas fa-graduation-cap"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -792,13 +1033,14 @@
     <section id="about">
         <div class="container">
             <div class="section-header">
-                <h2>About Me</h2>
+                <span class="section-label">About Me</span>
+                <h2>Passionate About Research & Innovation</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
+            <div class="about-grid">
+                <div class="about-content">
                     <p>
-                        I am a first-rank M.Sc. student in Computer Engineering (Software Engineering) at 
-                        <strong>Amirkabir University of Technology (Tehran Polytechnic)</strong>, Iran. 
+                        I am a first-rank M.Sc. student in <strong>Computer Engineering (Software Engineering)</strong> 
+                        at <strong>Amirkabir University of Technology (Tehran Polytechnic)</strong>, Iran. 
                         My research focuses on developing energy-aware scheduling strategies for serverless 
                         computing platforms to enhance Quality of Service while optimizing resource consumption.
                     </p>
@@ -808,17 +1050,38 @@
                         techniques, and online/offline scheduling algorithms.
                     </p>
                     <p>
-                        Beyond my thesis work, I have conducted research analyzing the SPECpower-ssj2008 
-                        benchmark dataset spanning 958 servers from 2007-2024, applying statistical learning, 
-                        clustering, and regression models to characterize server power-performance behavior.
+                        I am actively seeking <strong>PhD opportunities</strong> in Cloud Computing, 
+                        Distributed Systems, and Machine Learning for systems optimization.
                     </p>
-                    <p>
-                        I am actively seeking PhD opportunities in <strong>Cloud Computing</strong>, 
-                        <strong>Distributed Systems</strong>, and <strong>Machine Learning</strong> for systems optimization.
-                    </p>
+                    <div class="about-highlights">
+                        <div class="highlight-item">
+                            <div class="highlight-icon"><i class="fas fa-trophy"></i></div>
+                            <div class="highlight-text">
+                                <h4>Academic Excellence</h4>
+                                <p>Ranked First among M.Sc. students with 4.0/4.0 GPA</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon"><i class="fas fa-flask"></i></div>
+                            <div class="highlight-text">
+                                <h4>Research Focus</h4>
+                                <p>Energy-Aware Scheduling in Serverless Computing</p>
+                            </div>
+                        </div>
+                        <div class="highlight-item">
+                            <div class="highlight-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                            <div class="highlight-text">
+                                <h4>Teaching Experience</h4>
+                                <p>Lab Instructor & TA for graduate-level courses</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="info-card">
-                    <h3>Quick Info</h3>
+                    <div class="info-card-header">
+                        <div class="info-card-icon"><i class="fas fa-user"></i></div>
+                        <h3>Quick Information</h3>
+                    </div>
                     <div class="info-item">
                         <i class="fas fa-graduation-cap"></i>
                         <span>M.Sc. in Computer Engineering</span>
@@ -828,8 +1091,8 @@
                         <span>Amirkabir University of Technology</span>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-trophy"></i>
-                        <span>First Rank (GPA: 4.0/4.0)</span>
+                        <i class="fas fa-star"></i>
+                        <span>GPA: 4.0/4.0 (First Rank)</span>
                     </div>
                     <div class="info-item">
                         <i class="fas fa-map-marker-alt"></i>
@@ -838,6 +1101,14 @@
                     <div class="info-item">
                         <i class="fas fa-envelope"></i>
                         <a href="mailto:es.khosravi@aut.ac.ir">es.khosravi@aut.ac.ir</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/esmaeil-khosravi-075b33156/" target="_blank">LinkedIn Profile</a>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Esmaeil-Khosravi" target="_blank">GitHub Profile</a>
                     </div>
                 </div>
             </div>
@@ -848,21 +1119,23 @@
     <section id="research">
         <div class="container">
             <div class="section-header">
-                <h2>Research Interests</h2>
+                <span class="section-label">Research Interests</span>
+                <h2>Areas of Expertise & Exploration</h2>
+                <p>My research bridges cloud computing systems with machine learning techniques</p>
             </div>
             <div class="research-grid">
                 <div class="research-card">
-                    <i class="fas fa-cloud"></i>
+                    <div class="research-icon"><i class="fas fa-cloud"></i></div>
                     <h3>Cloud Computing & Distributed Systems</h3>
                     <ul>
                         <li>Function as a Service (FaaS)</li>
                         <li>Serverless Computing</li>
                         <li>Scheduling & Resource Management</li>
-                        <li>Optimization</li>
+                        <li>Performance Optimization</li>
                     </ul>
                 </div>
                 <div class="research-card">
-                    <i class="fas fa-brain"></i>
+                    <div class="research-icon"><i class="fas fa-brain"></i></div>
                     <h3>AI & Machine Learning</h3>
                     <ul>
                         <li>Deep Neural Networks</li>
@@ -872,7 +1145,7 @@
                     </ul>
                 </div>
                 <div class="research-card">
-                    <i class="fas fa-project-diagram"></i>
+                    <div class="research-icon"><i class="fas fa-project-diagram"></i></div>
                     <h3>Data Science & Networks</h3>
                     <ul>
                         <li>Graph Neural Networks</li>
@@ -889,13 +1162,15 @@
     <section id="publications">
         <div class="container">
             <div class="section-header">
-                <h2>Publications</h2>
+                <span class="section-label">Publications</span>
+                <h2>Research Output</h2>
             </div>
             <div class="publication-item">
-                <p class="pub-title">
-                    Performance to Power Behavior of Server Machines: An Analysis on SPECpower-ssj 2008 Benchmark
-                </p>
-                <span class="pub-status">Under Preparation</span>
+                <div class="pub-icon"><i class="fas fa-file-alt"></i></div>
+                <div class="pub-content">
+                    <p class="pub-title">Performance to Power Behavior of Server Machines: An Analysis on SPECpower-ssj 2008 Benchmark</p>
+                    <span class="pub-status">Under Preparation</span>
+                </div>
             </div>
         </div>
     </section>
@@ -904,20 +1179,21 @@
     <section id="experience">
         <div class="container">
             <div class="section-header">
-                <h2>Teaching Experience</h2>
+                <span class="section-label">Experience</span>
+                <h2>Teaching & Research Experience</h2>
             </div>
             <div class="timeline">
                 <div class="timeline-item">
                     <p class="timeline-date">Sep 2025 – Present</p>
                     <p class="timeline-title">Operating Systems Laboratory Instructor</p>
                     <p class="timeline-org">Amirkabir University of Technology</p>
-                    <p class="timeline-desc">Teaching OS concepts in Linux environment (Fall 2025)</p>
+                    <p class="timeline-desc">Teaching OS concepts in Linux environment</p>
                 </div>
                 <div class="timeline-item">
                     <p class="timeline-date">Oct 2024 – Sep 2025</p>
                     <p class="timeline-title">Programming Laboratory Instructor</p>
                     <p class="timeline-org">Amirkabir University of Technology</p>
-                    <p class="timeline-desc">Teaching programming concepts in C (Fall 2024 & Spring 2025)</p>
+                    <p class="timeline-desc">Teaching programming concepts in C language</p>
                 </div>
                 <div class="timeline-item">
                     <p class="timeline-date">Feb 2025 – Present</p>
@@ -925,9 +1201,9 @@
                     <p class="timeline-org">Amirkabir University of Technology</p>
                     <p class="timeline-desc">
                         Machine Learning (Graduate) – Dr. Nazerfard<br>
-                        Advanced Programming (Undergraduate) – Dr. Kalbasi<br>
                         Complex Network Analysis (Graduate) – Dr. Chehreghani<br>
-                        Distributed Systems (Graduate) – Dr. Kalbasi
+                        Distributed Systems (Graduate) – Dr. Kalbasi<br>
+                        Advanced Programming (Undergraduate) – Dr. Kalbasi
                     </p>
                 </div>
             </div>
@@ -938,27 +1214,28 @@
     <section id="education">
         <div class="container">
             <div class="section-header">
-                <h2>Education</h2>
+                <span class="section-label">Education</span>
+                <h2>Academic Background</h2>
             </div>
             <div class="edu-grid">
                 <div class="edu-card">
-                    <p class="edu-degree">M.Sc. in Computer Engineering (Software Engineering)</p>
+                    <p class="edu-degree">M.Sc. in Computer Engineering (Software)</p>
                     <p class="edu-school">
-                        <a href="https://aut.ac.ir" target="_blank">Amirkabir University of Technology (Tehran Polytechnic)</a>
+                        <a href="https://aut.ac.ir" target="_blank">Amirkabir University of Technology</a>
                     </p>
-                    <p class="edu-date">Sep 2023 – Present | Tehran, Iran</p>
+                    <p class="edu-date"><i class="far fa-calendar-alt"></i> Sep 2023 – Present</p>
                     <p class="edu-details">
                         <strong>Thesis:</strong> Energy-Aware Cold Start Mitigation to Enhance QoS in Serverless Computing<br>
                         <strong>Supervisor:</strong> Dr. Kalbasi
                     </p>
-                    <span class="edu-gpa">GPA: 4.0/4.0 – First Rank</span>
+                    <span class="edu-gpa"><i class="fas fa-trophy"></i> GPA: 4.0/4.0 – First Rank</span>
                 </div>
                 <div class="edu-card">
                     <p class="edu-degree">B.Sc. in Industrial Engineering</p>
                     <p class="edu-school">
                         <a href="https://basu.ac.ir" target="_blank">University of Bu-Ali Sina</a>
                     </p>
-                    <p class="edu-date">Sep 2016 – Oct 2020 | Hamedan, Iran</p>
+                    <p class="edu-date"><i class="far fa-calendar-alt"></i> Sep 2016 – Oct 2020</p>
                     <p class="edu-details">
                         <strong>Project:</strong> Location Optimization of Air Ambulance Bases Under Demand Location Uncertainty<br>
                         <strong>Supervisor:</strong> Dr. Samouei
@@ -973,7 +1250,8 @@
     <section id="skills">
         <div class="container">
             <div class="section-header">
-                <h2>Skills</h2>
+                <span class="section-label">Skills</span>
+                <h2>Technical Proficiencies</h2>
             </div>
             <div class="skills-grid">
                 <div class="skill-category">
@@ -986,7 +1264,7 @@
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-robot"></i> ML/Data Science</h3>
+                    <h3><i class="fas fa-robot"></i> ML & Data Science</h3>
                     <ul class="skill-list">
                         <li>TensorFlow</li>
                         <li>Scikit-learn</li>
@@ -995,9 +1273,9 @@
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3><i class="fas fa-tools"></i> Tools & Technologies</h3>
+                    <h3><i class="fas fa-tools"></i> Tools & Tech</h3>
                     <ul class="skill-list">
-                        <li>Git</li>
+                        <li>Git & GitHub</li>
                         <li>Docker</li>
                         <li>Linux</li>
                         <li>LaTeX</li>
@@ -1019,14 +1297,16 @@
     <section id="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
+                <span class="section-label">Contact</span>
+                <h2>Let's Connect</h2>
+                <p>I'm actively seeking PhD positions and open to research collaborations</p>
             </div>
-            <div class="contact-content">
-                <div class="contact-text">
+            <div class="contact-grid">
+                <div class="contact-info">
                     <p>
                         I am actively looking for PhD positions in Cloud Computing, Distributed Systems, 
-                        and Machine Learning. If you are interested in my research or would like to collaborate, 
-                        please feel free to reach out!
+                        and Machine Learning. If you're interested in my research or would like to 
+                        collaborate, I'd love to hear from you!
                     </p>
                 </div>
                 <div class="contact-links">
@@ -1034,11 +1314,11 @@
                         <i class="fas fa-envelope"></i>
                         <span>es.khosravi@aut.ac.ir</span>
                     </a>
-                    <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-link">
+                    <a href="https://www.linkedin.com/in/esmaeil-khosravi-075b33156/" target="_blank" class="contact-link">
                         <i class="fab fa-linkedin"></i>
                         <span>LinkedIn Profile</span>
                     </a>
-                    <a href="https://github.com/your-username" target="_blank" class="contact-link">
+                    <a href="https://github.com/Esmaeil-Khosravi" target="_blank" class="contact-link">
                         <i class="fab fa-github"></i>
                         <span>GitHub Profile</span>
                     </a>
@@ -1054,31 +1334,58 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Esmaeil Khosravi. Built with ❤️ for academia.</p>
+            <p>&copy; 2025 Esmaeil Khosravi.</p>
         </div>
     </footer>
 
     <script>
+        // Navigation toggle
         function toggleNav() {
             document.getElementById('navLinks').classList.toggle('active');
         }
 
-        // Close mobile nav when clicking a link
+        // Close mobile nav on link click
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('active');
             });
         });
 
-        // Navbar shadow on scroll
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('nav');
+            const nav = document.getElementById('navbar');
             if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+                nav.classList.add('scrolled');
             } else {
-                nav.style.boxShadow = 'none';
+                nav.classList.remove('scrolled');
             }
         });
+
+        // Smooth reveal animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = '0';
+            section.style.transform = 'translateY(30px)';
+            section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(section);
+        });
+
+        // Hero section should be visible immediately
+        document.querySelector('.hero').style.opacity = '1';
+        document.querySelector('.hero').style.transform = 'translateY(0)';
     </script>
 </body>
 </html>
